@@ -1,5 +1,7 @@
 import java.nio.file.Files;
+import java.io.File;
 import java.nio.file.Paths;
+import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
@@ -80,23 +82,24 @@ public class Main {
     }
     
     public static void main(String[] args) throws Exception {
-        // Prepare a test file. If the file doesn't exist, create a 1MB file with random data.
-        String filePath = "testfile.dat";
-        java.nio.file.Path path = Paths.get(filePath);
-        if (!Files.exists(path)) {
-            byte[] randomData = new byte[1024 * 1024]; // 1 MB
-            new Random().nextBytes(randomData);
-            Files.write(path, randomData);
+        // Use the file explorer to let the user choose a file.
+        File selectedFile = FileImporter.chooseFile();
+        if (selectedFile == null) {
+            System.out.println("No file selected. Exiting.");
+            return;
         }
+        String filePath = selectedFile.getAbsolutePath();
+        System.out.println("Selected file: " + filePath);
         
-        // Load plaintext from file (used for avalanche effect and entropy tests)
-        byte[] plaintext = Files.readAllBytes(path);
+        // Load plaintext from the selected file (used for avalanche effect and entropy tests)
+        byte[] plaintext = Files.readAllBytes(Paths.get(filePath));
         
-        // Instantiate your encryption algorithms. Here, only AES is shown.
+        // Instantiate your encryption algorithms.
+        // Make sure that each class (AES, DES, RSA, etc.) implements the EncryptionAlgorithm interface.
         List<EncryptionAlgorithm> algorithms = Arrays.asList(
             new AES(),
             new DES(),
-            new RSA() //, new TDS(), new ECC(), new TDES()
+            new RSA() //, new TDES(), new ECC(), etc.
         );
         
         // Loop through each algorithm and run the tests
