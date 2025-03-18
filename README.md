@@ -29,16 +29,7 @@ This project analyzes various encryption algorithms for file storage, highlighti
     git clone https://github.com/your-username/File-encryption-analysis.git
     cd File-encryption-analysis
     ```
-2. **Compile the Code**:
-    Open a terminal in the project directory and run:
-    ```bash
-    javac -d bin src/*.java
-    ```
-3. **Run the Program**:
-    Execute the main class:
-    ```bash
-    java -cp bin Main
-    ```
+
 
 ### Steps for macOS
 1. **Clone the Repository**:
@@ -46,16 +37,7 @@ This project analyzes various encryption algorithms for file storage, highlighti
     git clone https://github.com/your-username/File-encryption-analysis.git
     cd File-encryption-analysis
     ```
-2. **Compile the Code**:
-    Open a terminal in the project directory and run:
-    ```bash
-    javac -d bin src/*.java
-    ```
-3. **Run the Program**:
-    Execute the main class:
-    ```bash
-    java -cp bin Main
-    ```
+
 
 ## Adding New Encryption Algorithms
 1. Create a new class that implements the `EncryptionAlgorithm` interface.
