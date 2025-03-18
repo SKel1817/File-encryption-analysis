@@ -95,7 +95,8 @@ public class Main {
         // Instantiate your encryption algorithms. Here, only AES is shown.
         List<EncryptionAlgorithm> algorithms = Arrays.asList(
             new AES(),
-            new DES()//, new TDS(), new RSA(), new ECC(), new TDES()
+            new DES(),
+            new RSA() //, new TDS(), new ECC(), new TDES()
         );
         
         // Loop through each algorithm and run the tests
