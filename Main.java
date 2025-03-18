@@ -99,7 +99,11 @@ public class Main {
         List<EncryptionAlgorithm> algorithms = Arrays.asList(
             new AES(),
             new DES(),
-            new RSA() //, new TDES(), new ECC(), etc.
+            new TDES(),
+            new RSA(),
+            new ChaCha20(),
+            new Blowfish(),
+            new PBEEncryption()
         );
         
         // Loop through each algorithm and run the tests

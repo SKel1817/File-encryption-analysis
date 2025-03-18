@@ -1,15 +1,14 @@
 import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
-import javax.crypto.spec.SecretKeySpec;
 
-public class TDES implements EncryptionAlgorithm {
+public class Blowfish implements EncryptionAlgorithm {
     private SecretKey key;
-    private final String transformation = "DESede/ECB/PKCS5Padding"; // TDES transformation
+    private final String transformation = "Blowfish/ECB/PKCS5Padding";
 
-    public TDES() throws Exception {
-        KeyGenerator keyGen = KeyGenerator.getInstance("DESede"); // TDES key generator
-        keyGen.init(168); // TDES uses a 168-bit key
+    public Blowfish() throws Exception {
+        KeyGenerator keyGen = KeyGenerator.getInstance("Blowfish");
+        keyGen.init(128); // Blowfish key size can vary (32-448 bits)
         this.key = keyGen.generateKey();
     }
 
@@ -34,6 +33,6 @@ public class TDES implements EncryptionAlgorithm {
 
     @Override
     public String getName() {
-        return "TDES";
+        return "Blowfish";
     }
 }
