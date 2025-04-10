@@ -36,20 +36,24 @@ public class Main {
         } catch (IOException e) {
             System.err.println("Error creating results file: " + e.getMessage());
         }
-    }
-    
-    // Write to both console and file
+    }    // Write to both console and file
     public static void writeResult(String text) {
+        // Simple output without colors
         System.out.println(text);
+        
+        // Write to file
         if (resultWriter != null) {
             resultWriter.println(text);
         }
     }
-    
-    // Write formatted output to both console and file
+      // Write formatted output to both console and file
     public static void writeResultf(String format, Object... args) {
         String formattedText = String.format(format, args);
-        System.out.print(formattedText); 
+        
+        // Simple output without colors
+        System.out.print(formattedText);
+        
+        // Write to file
         if (resultWriter != null) {
             resultWriter.print(formattedText);
         }
