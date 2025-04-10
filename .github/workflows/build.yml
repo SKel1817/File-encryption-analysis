@@ -24,11 +24,11 @@ jobs:
       run: |
         chmod +x ./gradlew
         ./gradlew build
-        
-    - name: Build JAR
+          - name: Build JAR
       run: |
         ./gradlew jar
-          - name: Download Launch4j
+        
+    - name: Download Launch4j
       run: |
         wget -O launch4j.zip "https://sourceforge.net/projects/launch4j/files/launch4j-3/3.14/launch4j-3.14-linux-x64.zip/download"
         unzip launch4j.zip
@@ -60,21 +60,20 @@ jobs:
             <jdkPreference>preferJre</jdkPreference>
             <runtimeBits>64/32</runtimeBits>
           </jre>
-        </launch4jConfig>
-        EOF
-        - name: Create EXE with Launch4j
+        </launch4jConfig>        EOF
+        
+    - name: Create EXE with Launch4j
       run: |
         mkdir -p build/exe
         ./launch4j/launch4j launch4j-config.xml
 
     - name: Create Output Directory
-      run: mkdir -p release
-
-    - name: Copy Build Artifacts
+      run: mkdir -p release    - name: Copy Build Artifacts
       run: |
         cp build/libs/File-encryption-anaylsis.jar release/
         cp build/exe/File-encryption-anaylsis.exe release/
-        - name: Upload Build Artifacts
+        
+    - name: Upload Build Artifacts
       uses: actions/upload-artifact@v2
       with:
         name: file-encryption-analysis-builds
