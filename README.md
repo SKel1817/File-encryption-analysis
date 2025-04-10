@@ -50,5 +50,3 @@ This project is licensed under the MIT License. See the [LICENSE](./LICENSE) fil
 ## Contributing
 Contributions are welcome! Feel free to submit issues or pull requests to improve the project.
 
-## Contact
-For questions or feedback, please contact Valerie Nielson at [your-email@example.com].
