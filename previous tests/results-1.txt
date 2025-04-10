@@ -1,0 +1,161 @@
+Encryption Algorithm Analysis Results
+Generated: Wed Apr 09 20:40:54 EDT 2025
+=====================================
+
+Selected file: C:\Users\niels\OneDrive\Documents\super-secert-file.txt
+
+=== Testing AES ===
+AES Encryption Time (ms): 13.0335
+AES Throughput (MB/s): 0.002780498256296275
+
+=== Provided Data for AES ===
+Original data (first 38 bytes): 
+HEX: 54 68 69 73 20 69 73 20  73 6F 20 73 65 63 72 65  74 20 79 6F 75 27 6C 6C  20 6E 65 76 65 72 20 73  65 65 20 69 74 2E 
+TXT: This is  so secre t you'll  never s ee it.
+
+Encrypted data (first 38 bytes): 
+HEX: 5A 3B 44 B5 DF 12 37 AD  4C FF 82 79 B2 B9 29 26  11 94 ED 47 FB AF 26 96  CF E3 59 7E EF 0C 2D 65  0C 44 D5 D8 99 76 
+TXT: Z;D...7. L..y..)& ...G..&. ..Y~..-e .D...v
+===================================
+AES Avalanche Effect Hamming Distance: 72
+AES Ciphertext Shannon Entropy: 5.376629167387827
+AES Key Length (bits): 128
+
+=== Testing DES ===
+DES Encryption Time (ms): 1.5061
+DES Throughput (MB/s): 0.02406189763192185
+
+=== Provided Data for DES ===
+Original data (first 38 bytes): 
+HEX: 54 68 69 73 20 69 73 20  73 6F 20 73 65 63 72 65  74 20 79 6F 75 27 6C 6C  20 6E 65 76 65 72 20 73  65 65 20 69 74 2E 
+TXT: This is  so secre t you'll  never s ee it.
+
+Encrypted data (first 38 bytes): 
+HEX: 62 1D 2D 52 86 C2 89 22  8D DD ED D8 99 B8 73 B3  28 F8 C5 93 34 39 AE 4B  40 6B 67 AE E1 40 16 77  D2 FB 8C 9A B0 AE 
+TXT: b.-R..." ......s. (...49.K @kg..@.w ......
+===================================
+DES Avalanche Effect Hamming Distance: 27
+DES Ciphertext Shannon Entropy: 5.103055907333276
+DES Key Length (bits): 64
+
+=== Testing TDES ===
+TDES Encryption Time (ms): 1.5028
+TDES Throughput (MB/s): 0.024114735176628627
+
+=== Provided Data for TDES ===
+Original data (first 38 bytes): 
+HEX: 54 68 69 73 20 69 73 20  73 6F 20 73 65 63 72 65  74 20 79 6F 75 27 6C 6C  20 6E 65 76 65 72 20 73  65 65 20 69 74 2E 
+TXT: This is  so secre t you'll  never s ee it.
+
+Encrypted data (first 38 bytes): 
+HEX: D3 E7 F9 64 F5 8F 1E B6  99 7D F5 92 AC C7 C5 1E  49 0D 5D 17 81 03 18 45  53 C1 09 9B 96 84 1A 50  CB AD A9 2D 3C 16 
+TXT: ...d.... .}...... I.]....E S......P ...-<.
+===================================
+TDES Avalanche Effect Hamming Distance: 37
+TDES Ciphertext Shannon Entropy: 5.221928094887363
+TDES Key Length (bits): 192
+
+=== Testing RSA ===
+RSA Encryption Time (ms): 2.623
+RSA Throughput (MB/s): 0.013816097607105414
+
+=== Provided Data for RSA ===
+Original data (first 38 bytes): 
+HEX: 54 68 69 73 20 69 73 20  73 6F 20 73 65 63 72 65  74 20 79 6F 75 27 6C 6C  20 6E 65 76 65 72 20 73  65 65 20 69 74 2E 
+TXT: This is  so secre t you'll  never s ee it.
+
+Encrypted data (first 38 bytes): 
+HEX: 13 4D F0 7F F4 DE 25 4C  C9 86 80 ED 8A FF 15 8F  4B 1A 3A 35 DF F8 11 5E  87 25 81 39 CE E1 BF A9  97 E8 FA 9A 86 62 
+TXT: .M....%L ........ K.:5...^ .%.9.... .....b
+===================================
+RSA Avalanche Effect Hamming Distance: 1036
+RSA Ciphertext Shannon Entropy: 7.215986755790212
+RSA Key Length (bits): 2352
+
+=== Testing ChaCha20 ===
+ChaCha20 Encryption Time (ms): 3.2608
+ChaCha20 Throughput (MB/s): 0.011113721793252424
+
+=== Provided Data for ChaCha20 ===
+Original data (first 38 bytes): 
+HEX: 54 68 69 73 20 69 73 20  73 6F 20 73 65 63 72 65  74 20 79 6F 75 27 6C 6C  20 6E 65 76 65 72 20 73  65 65 20 69 74 2E 
+TXT: This is  so secre t you'll  never s ee it.
+
+Encrypted data (first 38 bytes): 
+HEX: 74 63 E4 39 BE DD 5F 57  21 EE 72 98 4A 56 F9 A1  B7 79 40 36 A1 2A 1A B7  1F CE 2E 06 38 70 F5 FD  9C 53 90 EE 4D EE 
+TXT: tc.9.._W !.r.JV.. .y@6.*.. ....8p.. .S..M.
+===================================
+ChaCha20 Avalanche Effect Hamming Distance: 198
+ChaCha20 Ciphertext Shannon Entropy: 5.428758439731458
+ChaCha20 Key Length (bits): 256
+
+=== Testing Blowfish ===
+Blowfish Encryption Time (ms): 2.4932
+Blowfish Throughput (MB/s): 0.014535385858911239
+
+=== Provided Data for Blowfish ===
+Original data (first 38 bytes): 
+HEX: 54 68 69 73 20 69 73 20  73 6F 20 73 65 63 72 65  74 20 79 6F 75 27 6C 6C  20 6E 65 76 65 72 20 73  65 65 20 69 74 2E 
+TXT: This is  so secre t you'll  never s ee it.
+
+Encrypted data (first 38 bytes): 
+HEX: 17 5F B3 B4 F9 E3 BE 8F  34 AC 66 12 74 89 16 09  12 5E 59 E2 72 26 76 AC  87 7D 9C 3E 57 FE 57 35  F3 A1 03 99 6E 45 
+TXT: ._...... 4.f.t... .^Y.r&v. .}.>W.W5 ....nE
+===================================
+Blowfish Avalanche Effect Hamming Distance: 29
+Blowfish Ciphertext Shannon Entropy: 5.171928094887363
+Blowfish Key Length (bits): 128
+
+=== Testing PBEWithMD5AndDES ===
+PBEWithMD5AndDES Encryption Time (ms): 13.0965
+PBEWithMD5AndDES Throughput (MB/s): 0.0027671228208633984
+
+=== Provided Data for PBEWithMD5AndDES ===
+Original data (first 38 bytes): 
+HEX: 54 68 69 73 20 69 73 20  73 6F 20 73 65 63 72 65  74 20 79 6F 75 27 6C 6C  20 6E 65 76 65 72 20 73  65 65 20 69 74 2E 
+TXT: This is  so secre t you'll  never s ee it.
+
+Encrypted data (first 38 bytes): 
+HEX: A7 08 13 EA 7F 1E DC 8F  34 67 B5 08 C6 A2 16 F8  00 26 0F 35 1C 3B FB 0F  0D 5C 57 8E 87 DA DA DE  3B B9 69 1D B1 59 
+TXT: ........ 4g...... .&.5.;.. .\W..... ;.i..Y
+===================================
+PBEWithMD5AndDES Avalanche Effect Hamming Distance: 165
+PBEWithMD5AndDES Ciphertext Shannon Entropy: 5.1219280948873624
+PBEWithMD5AndDES Key Length (bits): 112
+
+===================================================
+           ALGORITHM COMPARISON RESULTS           
+===================================================
+Algorithm       Encrypt Time    Throughput      Avalanche       Entropy         Key Length     
+-------------------------------------------------------------------------------------------------------------------
+RSA             2.62            0.01            1036            7.2160          2352           
+TDES            1.50            0.02            37              5.2219          192            
+DES             1.51            0.02            27              5.1031          64             
+ChaCha20        3.26            0.01            198             5.4288          256            
+Blowfish        2.49            0.01            29              5.1719          128            
+AES             13.03           0.00            72              5.3766          128            
+PBEWithMD5AndDES 13.10           0.00            165             5.1219          112            
+
+===================================================
+              ALGORITHM SCORES (0-10)             
+===================================================
+Algorithm       Speed           Throughput      Avalanche       Entropy         Key Strength    Total Score    
+-----------------------------------------------------------------------------------------------------------------------
+RSA             9.03            5.18            10.00           10.00           10.00           7.13           
+TDES            10.00           10.00           0.10            0.56            0.56            3.20           
+DES             10.00           9.98            0.00            0.00            0.00            3.00           
+ChaCha20        8.48            3.91            1.69            1.54            0.84            2.54           
+Blowfish        9.15            5.51            0.02            0.33            0.28            2.30           
+AES             0.05            0.01            0.45            1.29            0.28            0.35           
+PBEWithMD5AndDES 0.00            0.00            1.37            0.09            0.21            0.28           
+
+===================================================
+               RECOMMENDATIONS                    
+===================================================
+Best Overall Algorithm: RSA (Score: 7.13)
+Best for Speed: TDES
+Best for Security: RSA
+Best for Small Files: TDES
+Best for Large Files: TDES
+Process CPU Load: 0.0
+Used Memory (bytes): 9303728
