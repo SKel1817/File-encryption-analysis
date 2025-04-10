@@ -37,7 +37,7 @@ The analysis includes popular encryption algorithms:
 ## Project Structure
 
 ```
-File-encryption-anaylsis/
+File-encryption-analysis/
 ├── src/main/java/                  # Source code
 │   ├── EncryptionAlgorithm.java    # Interface for all encryption algorithms
 │   ├── EncryptionAnalysisGUI.java  # GUI implementation
@@ -86,8 +86,8 @@ File-encryption-anaylsis/
 
 ```bash
 # Clone the repository
-git clone https://github.com/SKel1817/File-encryption-anaylsis.git
-cd File-encryption-anaylsis
+git clone https://github.com/SKel1817/File-encryption-analysis.git
+cd File-encryption-analysis
 
 # Build with Gradle
 ./gradlew build
@@ -103,7 +103,7 @@ cd File-encryption-anaylsis
 ./gradlew jar
 
 # Run the JAR file
-java -jar build/libs/File-encryption-anaylsis.jar
+java -jar build/libs/File-encryption-analysis.jar
 ```
 
 ### Running the Application
