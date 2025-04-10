@@ -245,8 +245,31 @@ public class Main {
         writeResult("Best for Small Files: " + bestSmallFiles.getName());
         writeResult("Best for Large Files: " + bestLargeFiles.getName());
     }
+      public static void main(String[] args) throws Exception {
+        try {
+            // Try to set the system look and feel
+            try {
+                javax.swing.UIManager.setLookAndFeel(javax.swing.UIManager.getSystemLookAndFeelClassName());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            
+            // Start the GUI application
+            javax.swing.SwingUtilities.invokeLater(() -> {
+                EncryptionAnalysisGUI gui = new EncryptionAnalysisGUI();
+                gui.setVisible(true);
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+            
+            // Fall back to console mode if GUI fails to start
+            System.err.println("GUI failed to start. Falling back to console mode.");
+            runConsoleMode();
+        }
+    }
     
-    public static void main(String[] args) throws Exception {
+    // Original console mode method (as a fallback)
+    private static void runConsoleMode() throws Exception {
         // Initialize result file
         initResultFile();
 
@@ -282,7 +305,8 @@ public class Main {
             
             // Create performance object for this algorithm
             AlgorithmEvaluator.AlgorithmPerformance performance = new AlgorithmEvaluator.AlgorithmPerformance(algo.getName());
-              // Speed testing
+            
+            // Speed testing
             byte[] fileBytes = Files.readAllBytes(Paths.get(filePath));
             long startEnc = System.nanoTime();
             byte[] ciphertext = algo.encrypt(fileBytes);
@@ -292,7 +316,8 @@ public class Main {
             double throughput = fileSizeMB / ((endEnc - startEnc) / 1e9);
             writeResult(algo.getName() + " Encryption Time (ms): " + encTimeMs);
             writeResult(algo.getName() + " Throughput (MB/s): " + throughput);
-              // Display samples of original and encrypted data
+            
+            // Display samples of original and encrypted data
             displayFileSamples(fileBytes, ciphertext, algo.getName());
             
             // Store the speed metrics
