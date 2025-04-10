@@ -9,7 +9,7 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v3
@@ -28,15 +28,15 @@ jobs:
     - name: Build JAR
       run: |
         ./gradlew jar
-        
-    - name: Download Launch4j
+          - name: Download Launch4j
       run: |
-        Invoke-WebRequest -Uri "https://sourceforge.net/projects/launch4j/files/launch4j-3/3.14/launch4j-3.14-win32.zip/download" -OutFile "launch4j.zip"
-        Expand-Archive -Path "launch4j.zip" -DestinationPath "."
-      
+        wget -O launch4j.zip "https://sourceforge.net/projects/launch4j/files/launch4j-3/3.14/launch4j-3.14-linux-x64.zip/download"
+        unzip launch4j.zip
+        chmod +x launch4j/launch4j
+        
     - name: Create Launch4j config
       run: |
-        $content = @"
+        cat > launch4j-config.xml << 'EOF'
         <?xml version="1.0" encoding="UTF-8"?>
         <launch4jConfig>
           <dontWrapJar>false</dontWrapJar>
@@ -61,13 +61,11 @@ jobs:
             <runtimeBits>64/32</runtimeBits>
           </jre>
         </launch4jConfig>
-        "@
-        New-Item -Path "launch4j-config.xml" -ItemType "file" -Value $content
-      shell: pwsh
-      
-    - name: Create EXE with Launch4j
+        EOF
+        - name: Create EXE with Launch4j
       run: |
-        launch4j/launch4j.exe launch4j-config.xml
+        mkdir -p build/exe
+        ./launch4j/launch4j launch4j-config.xml
 
     - name: Create Output Directory
       run: mkdir -p release
@@ -76,9 +74,8 @@ jobs:
       run: |
         cp build/libs/File-encryption-anaylsis.jar release/
         cp build/exe/File-encryption-anaylsis.exe release/
-      
-    - name: Upload Build Artifacts
-      uses: actions/upload-artifact@v3
+        - name: Upload Build Artifacts
+      uses: actions/upload-artifact@v2
       with:
         name: file-encryption-analysis-builds
         path: |
